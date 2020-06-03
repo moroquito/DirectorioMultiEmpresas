@@ -25,7 +25,6 @@ jobs:
 
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-.github/workflows/master_directoriomultiempresas.yml
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
@@ -34,3 +33,4 @@ jobs:
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_aa075013cb4f42b6bd6b5c9c6c72448d }}
         package: ${{env.DOTNET_ROOT}}/myapp 
+       
